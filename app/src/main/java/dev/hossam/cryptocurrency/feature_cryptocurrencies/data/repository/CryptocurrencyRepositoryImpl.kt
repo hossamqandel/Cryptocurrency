@@ -7,6 +7,7 @@ import dev.hossam.cryptocurrency.core.data.remote.CryptocurrencyService
 import dev.hossam.cryptocurrency.core.data.util.Resource
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.dto.CryptocurrencyDTO
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.local.CryptocurrencyDao
+import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.mapper.responseToCryptocurrencyDTO
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.mapper.toCryptocurrenciesDTO
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.mapper.toCryptocurrenciesEntity
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.domain.repository.CryptocurrencyRepository
@@ -28,7 +29,7 @@ class CryptocurrencyRepositoryImpl @Inject constructor(
         emit(Resource.Loading(oldCryptocurrencies))
 
         try {
-            val remoteCryptocurrencies = api.getAllCryptocurrencies().toCryptocurrenciesDTO()
+            val remoteCryptocurrencies = api.getAllCryptocurrencies().map { it.responseToCryptocurrencyDTO() }
             dao.deleteAllCryptocurrencies()
             dao.insertCryptocurrencies(remoteCryptocurrencies.toCryptocurrenciesEntity())
             val latestCryptocurrencies = dao.getAllCryptocurrencies()

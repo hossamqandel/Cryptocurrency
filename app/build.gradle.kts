@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
     id("com.google.devtools.ksp")
 
 }
@@ -37,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -67,11 +73,11 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.47")
     ksp("com.google.dagger:hilt-android-compiler:2.47")
+    //
 
     //Room Database
     val room_version = "2.5.2"
     implementation("androidx.room:room-runtime:$room_version")
-    // To use Kotlin Symbol Processing (KSP)
     ksp("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
 
@@ -80,6 +86,8 @@ dependencies {
     //Gson Converter
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //Coil
+    implementation("io.coil-kt:coil:2.4.0")
     //WorkManager - Kotlin + coroutines
     val work_version = "2.8.1"
     implementation("androidx.work:work-runtime-ktx:$work_version")

@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.hossam.cryptocurrency.core.constant.Const
 import dev.hossam.cryptocurrency.core.data.local.CryptocurrencyDatabase
+import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.local.CryptocurrencyDao
 import javax.inject.Singleton
 
 @Module
@@ -17,12 +18,19 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context
-    ): Lazy<CryptocurrencyDatabase> = lazy {
-            Room.databaseBuilder(
-                context = context,
-                klass = CryptocurrencyDatabase::class.java,
-                name = Const.RoomUtil.DATABASE_NAME
-            ).build()
-        }
+    fun provideDatabase(
+        @ApplicationContext context: Context
+    ): CryptocurrencyDatabase =
+        Room.databaseBuilder(
+            context = context,
+            klass = CryptocurrencyDatabase::class.java,
+            name = Const.RoomUtil.DATABASE_NAME
+        ).build()
+
+    @Provides
+    @Singleton
+    fun provideCryptocurrencyDao(database: CryptocurrencyDatabase): CryptocurrencyDao {
+        return database.cryptocurrencyDao()
+    }
 }
+

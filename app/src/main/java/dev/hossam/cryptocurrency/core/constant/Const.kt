@@ -1,5 +1,7 @@
 package dev.hossam.cryptocurrency.core.constant
 
+import dev.hossam.cryptocurrency.R
+
 object Const {
 
     object WebUtil {
@@ -16,5 +18,11 @@ object Const {
         object Table {
             const val CRYPTOCURRENCY = "CryptocurrencyEntity"
         }
+    }
+
+
+    object PopMenu {
+        val DESCENDING = R.id.item_descending
+        val ASCENDING = R.id.item_ascending
     }
 }

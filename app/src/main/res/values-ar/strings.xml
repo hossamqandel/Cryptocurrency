@@ -8,4 +8,7 @@
     <string name="io_exception">حدثت مشكلة أثناء استقبال البيانات. يرجى المحاولة مرة أخرى.</string>
     <string name="http_exception">فشل في التواصل مع الخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى</string>
 
+    <string name="descending">تنازلي</string>
+    <string name="ascending">تصاعدي</string>
+
 </resources>

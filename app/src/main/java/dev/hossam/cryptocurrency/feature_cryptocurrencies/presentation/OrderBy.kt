@@ -1,6 +1,6 @@
 package dev.hossam.cryptocurrency.feature_cryptocurrencies.presentation
 
 sealed interface OrderBy {
-    class Descending : OrderBy
-    class Ascending : OrderBy
+    object Descending : OrderBy
+    object Ascending : OrderBy
 }

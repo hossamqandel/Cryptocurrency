@@ -45,13 +45,13 @@ class GetCryptocurrenciesUseCase @Inject constructor(
 
                 is Resource.Error -> when (orderBy) {
                     is OrderBy.Descending -> Resource.Error(
-                        message = resource.message!!,
-                        data = resource.data!!.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        message = resource.message ?: "",
+                        data = resource.data?.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.id }
                     )
 
                     is OrderBy.Ascending -> Resource.Error(
-                        message = resource.message!!,
-                        data = resource.data!!.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        message = resource.message ?: "",
+                        data = resource.data?.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.id }
                     )
                 }
             }

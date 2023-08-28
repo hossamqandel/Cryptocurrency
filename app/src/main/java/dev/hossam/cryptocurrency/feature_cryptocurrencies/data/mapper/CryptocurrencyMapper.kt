@@ -4,10 +4,6 @@ import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.dto.Cryptocurrenc
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.local.CryptocurrencyEntity
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.domain.model.Cryptocurrency
 
-fun List<Cryptocurrency>.toCryptocurrenciesDTO(): List<CryptocurrencyDTO> {
-    return map { it.toCryptocurrencyDTO() }
-}
-
 fun List<CryptocurrencyDTO>.toCryptocurrenciesEntity(): List<CryptocurrencyEntity> {
     return map { it.toCryptocurrencyEntity() }
 }
@@ -35,7 +31,7 @@ fun CryptocurrencyEntity.toCryptocurrencyDTO(): CryptocurrencyDTO {
     )
 }
 
-fun Cryptocurrency.toCryptocurrencyDTO(): CryptocurrencyDTO {
+fun Cryptocurrency.responseToCryptocurrencyDTO(): CryptocurrencyDTO {
     return CryptocurrencyDTO(
         id = id,
         cryptoName = name,
