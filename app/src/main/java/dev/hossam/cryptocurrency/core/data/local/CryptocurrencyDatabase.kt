@@ -2,10 +2,9 @@ package dev.hossam.cryptocurrency.core.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import dev.hossam.cryptocurrency.core.constant.Const
 
-@Database(exportSchema = false, version = 1)
+@Database(exportSchema = false, version = Const.RoomUtil.VERSION)
 abstract class CryptocurrencyDatabase : RoomDatabase() {
-
-    companion object { const val DATABASE_NAME = "Cryptocurrency_Database" }
 
 }
