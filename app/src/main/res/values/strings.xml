@@ -4,4 +4,7 @@
     <string name="not_active">Not Active</string>
     <string name="tags">Tags</string>
     <string name="team_members">Team Members</string>
+    <string name="io_exception">A problem occurred while reading data. Please try again</string>
+    <string name="http_exception">Failed to communicate with the server. Please check your internet connection and try again</string>
+
 </resources>

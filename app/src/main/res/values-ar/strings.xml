@@ -5,4 +5,7 @@
     <string name="not_active">غير نشط</string>
     <string name="tags">الشعارات</string>
     <string name="team_members">أعضاء الفريق</string>
+    <string name="io_exception">حدثت مشكلة أثناء استقبال البيانات. يرجى المحاولة مرة أخرى.</string>
+    <string name="http_exception">فشل في التواصل مع الخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى</string>
+
 </resources>

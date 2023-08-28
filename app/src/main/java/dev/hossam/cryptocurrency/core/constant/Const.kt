@@ -13,5 +13,8 @@ object Const {
         const val VERSION = 1
         const val DATABASE_NAME = "Cryptocurrency_Database"
 
+        object Table {
+            const val CRYPTOCURRENCY = "CryptocurrencyEntity"
+        }
     }
 }
