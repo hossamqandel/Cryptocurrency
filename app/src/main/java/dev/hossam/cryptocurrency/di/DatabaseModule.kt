@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.hossam.cryptocurrency.core.constant.Const
 import dev.hossam.cryptocurrency.core.data.local.CryptocurrencyDatabase
+import dev.hossam.cryptocurrency.feature_crypto_details.data.local.CryptoDetailsDao
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.local.CryptocurrencyDao
 import javax.inject.Singleton
 
@@ -31,6 +32,12 @@ object DatabaseModule {
     @Singleton
     fun provideCryptocurrencyDao(database: CryptocurrencyDatabase): CryptocurrencyDao {
         return database.cryptocurrencyDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCryptoDetailsDao(database: CryptocurrencyDatabase): CryptoDetailsDao {
+        return database.cryptoDetailsDao()
     }
 }
 
