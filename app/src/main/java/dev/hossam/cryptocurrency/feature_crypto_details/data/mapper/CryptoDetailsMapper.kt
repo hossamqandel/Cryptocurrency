@@ -14,6 +14,7 @@ fun CryptocurrencyDetails.responseToCryptoDetailsDTO(): CryptocurrencyDetailsDTO
         description = description,
         isActive = isActive,
         logo = logo,
+        rank = rank,
         tags = tags.map { TagDTO(it.id, it.name) },
         team = team.map { TeamDTO(it.id, it.name, it.position) }
     )
@@ -27,6 +28,7 @@ fun CryptoDetailsEntity.toCryptoDetailsDTO(): CryptocurrencyDetailsDTO {
         description,
         isActive,
         logo,
+        rank,
         tags,
         team
     )
@@ -40,6 +42,7 @@ fun CryptocurrencyDetailsDTO.toCryptoDetailsEntity(): CryptoDetailsEntity {
         description,
         isActive,
         logo,
+        rank,
         tags,
         team
     )

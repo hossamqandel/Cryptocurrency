@@ -7,6 +7,7 @@ data class CryptocurrencyDetailsDTO(
     val description: String,
     val isActive: Boolean,
     val logo: String,
+    val rank: Int,
     val tags: List<TagDTO>,
     val team: List<TeamDTO>
 )

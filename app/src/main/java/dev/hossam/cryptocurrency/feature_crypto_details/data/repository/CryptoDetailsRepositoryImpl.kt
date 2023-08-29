@@ -42,6 +42,6 @@ class CryptoDetailsRepositoryImpl @Inject constructor(
             ))
         }
         val latestCrypto = dao.getCryptoDetails(id)?.toCryptoDetailsDTO()
-        emit(Resource.Success(latestCrypto!!))
+        latestCrypto?.let { emit(Resource.Success(latestCrypto)) }
     }
 }

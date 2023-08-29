@@ -19,11 +19,11 @@ class GetCryptocurrenciesUseCase @Inject constructor(
                 is Resource.Loading -> when (orderBy) {
 
                     is OrderBy.Descending -> Resource.Loading(
-                        resource.data?.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        resource.data?.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.rank }
                     )
 
                     is OrderBy.Ascending -> Resource.Loading(
-                        resource.data?.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        resource.data?.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.rank }
                     )
                 }
 
@@ -31,13 +31,13 @@ class GetCryptocurrenciesUseCase @Inject constructor(
                 is Resource.Success -> when (orderBy) {
                     is OrderBy.Descending -> Resource.Success(
                         resource.data?.sortedByDescending { cryptocurrencyDto ->
-                            cryptocurrencyDto.id
+                            cryptocurrencyDto.rank
                         } ?: Collections.emptyList()
                     )
 
                     is OrderBy.Ascending -> Resource.Success(
                         resource.data?.sortedBy { cryptocurrencyDto ->
-                            cryptocurrencyDto.id
+                            cryptocurrencyDto.rank
                         } ?: Collections.emptyList()
                     )
                 }
@@ -46,12 +46,12 @@ class GetCryptocurrenciesUseCase @Inject constructor(
                 is Resource.Error -> when (orderBy) {
                     is OrderBy.Descending -> Resource.Error(
                         message = resource.message ?: "",
-                        data = resource.data?.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        data = resource.data?.sortedByDescending { cryptocurrencyDto -> cryptocurrencyDto.rank }
                     )
 
                     is OrderBy.Ascending -> Resource.Error(
                         message = resource.message ?: "",
-                        data = resource.data?.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.id }
+                        data = resource.data?.sortedBy { cryptocurrencyDto -> cryptocurrencyDto.rank }
                     )
                 }
             }

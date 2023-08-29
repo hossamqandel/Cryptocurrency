@@ -25,6 +25,7 @@ data class CryptocurrencyDetails(
     val open_source: Boolean,
     val org_structure: String,
     val proof_type: String,
+    @SerializedName("rank")
     val rank: Int,
     val started_at: String,
     @SerializedName("symbol")

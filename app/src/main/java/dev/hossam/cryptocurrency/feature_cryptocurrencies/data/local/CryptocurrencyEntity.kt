@@ -15,5 +15,7 @@ data class CryptocurrencyEntity(
     @SerializedName("symbol")
     val symbol: String,
     @SerializedName("isActive")
-    val isActive: Boolean
+    val isActive: Boolean,
+    @SerializedName("rank")
+    val rank: Int
 )

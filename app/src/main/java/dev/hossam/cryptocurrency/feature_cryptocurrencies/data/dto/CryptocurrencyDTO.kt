@@ -5,4 +5,5 @@ data class CryptocurrencyDTO(
     val cryptoName: String,
     val symbol: String,
     val isActive: Boolean,
+    val rank: Int
 )

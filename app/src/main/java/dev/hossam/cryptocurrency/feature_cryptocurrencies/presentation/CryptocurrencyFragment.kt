@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hossam.cryptocurrency.R
@@ -44,8 +45,16 @@ class CryptocurrencyFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
         collectUiState()
         showPopMenu()
         collectUiEvents()
+        onClick()
     }
 
+    private fun onClick(){
+        cryptoAdapter?.onClick = { coinId ->
+            findNavController().navigate(CryptocurrencyFragmentDirections
+                .actionCryptocurrencyFragmentToCryptoDetailsFragment(coinId!!)
+            )
+        }
+    }
     private fun collectUiState(){
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.CREATED){

@@ -8,5 +8,18 @@
         android:id="@+id/cryptocurrencyFragment"
         android:name="dev.hossam.cryptocurrency.feature_cryptocurrencies.presentation.CryptocurrencyFragment"
         android:label="fragment_cryptocurrency"
-        tools:layout="@layout/fragment_cryptocurrency" />
+        tools:layout="@layout/fragment_cryptocurrency" >
+        <action
+            android:id="@+id/action_cryptocurrencyFragment_to_cryptoDetailsFragment"
+            app:destination="@id/cryptoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cryptoDetailsFragment"
+        android:name="dev.hossam.cryptocurrency.feature_crypto_details.presentation.CryptoDetailsFragment"
+        android:label="fragment_crypto_details"
+        tools:layout="@layout/fragment_crypto_details" >
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+    </fragment>
 </navigation>

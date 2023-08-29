@@ -18,7 +18,8 @@ fun CryptocurrencyDTO.toCryptocurrencyEntity(): CryptocurrencyEntity {
         id = id,
         cryptoName = cryptoName,
         symbol = symbol,
-        isActive = isActive
+        isActive = isActive,
+        rank = rank
     )
 }
 
@@ -27,7 +28,8 @@ fun CryptocurrencyEntity.toCryptocurrencyDTO(): CryptocurrencyDTO {
         id = id,
         cryptoName = cryptoName,
         symbol = symbol,
-        isActive = isActive
+        isActive = isActive,
+        rank = rank
     )
 }
 
@@ -36,6 +38,7 @@ fun Cryptocurrency.responseToCryptocurrencyDTO(): CryptocurrencyDTO {
         id = id,
         cryptoName = name,
         symbol = symbol,
-        isActive = isActive
+        isActive = isActive,
+        rank = rank
     )
 }
