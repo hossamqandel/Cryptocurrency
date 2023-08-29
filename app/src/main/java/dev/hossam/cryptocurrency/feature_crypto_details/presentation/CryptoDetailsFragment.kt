@@ -17,6 +17,7 @@ class CryptoDetailsFragment : Fragment() {
     private var _binding: FragmentCryptoDetailsBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<CryptoDetailsViewModel>()
+    private var tagAdapter: TagsAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -25,7 +26,7 @@ class CryptoDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        tagAdapter = TagsAdapter()
         _binding = FragmentCryptoDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,8 +35,10 @@ class CryptoDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        tagAdapter = null
     }
 }
