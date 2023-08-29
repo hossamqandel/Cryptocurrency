@@ -31,6 +31,6 @@ This app uses MVVM [(Model View View-Model)](https://developer.android.com/kotli
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20201212151348/ViewModelComponent-660x407.png" width="80%"/>
 
 ## Build-tool 🧰
-<img src="https://developer.android.com/static/studio/images/new-studio-logo-1.png" width="20%" height="20%"/>
+<img src="https://developer.android.com/static/studio/images/new-studio-logo-1.png" width="10%" height="10%"/>
 
 
