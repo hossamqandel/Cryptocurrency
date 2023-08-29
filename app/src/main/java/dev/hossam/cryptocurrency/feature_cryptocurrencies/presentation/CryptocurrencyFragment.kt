@@ -1,11 +1,8 @@
 package dev.hossam.cryptocurrency.feature_cryptocurrencies.presentation
 
 import android.os.Bundle
-import android.service.controls.ControlsProviderService.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.MenuItem.OnMenuItemClickListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -14,8 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hossam.cryptocurrency.R
+import dev.hossam.cryptocurrency.core.UiEvent
 import dev.hossam.cryptocurrency.core.constant.Const
 import dev.hossam.cryptocurrency.databinding.FragmentCryptocurrencyBinding
 import dev.hossam.cryptocurrency.feature_cryptocurrencies.data.dto.CryptocurrencyDTO
@@ -44,6 +43,7 @@ class CryptocurrencyFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
 
         collectUiState()
         showPopMenu()
+        collectUiEvents()
     }
 
     private fun collectUiState(){
@@ -55,7 +55,17 @@ class CryptocurrencyFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
             }
         }
     }
-    private fun setupRecyclerUi(data: List<CryptocurrencyDTO>){
+
+    private fun collectUiEvents() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.uiEvent.collectLatest { uiEvent ->
+                when(uiEvent){
+                    is UiEvent.SnackBar -> Snackbar.make(binding.rvCryptocurrencies, uiEvent.message, Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+        private fun setupRecyclerUi(data: List<CryptocurrencyDTO>){
         cryptoAdapter?.setList(data)
         binding.rvCryptocurrencies.apply {
             adapter = cryptoAdapter
@@ -72,11 +82,6 @@ class CryptocurrencyFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
             }
         }
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        cryptoAdapter = null
-        _binding = null
-    }
 
     override fun onMenuItemClick(menuItem: MenuItem): Boolean {
         return when(menuItem.itemId){
@@ -91,4 +96,12 @@ class CryptocurrencyFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
             else -> false
         }
     }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        cryptoAdapter = null
+        _binding = null
+    }
+
 }
