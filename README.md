@@ -1,5 +1,7 @@
 <img src="https://github.com/hossamqandel/Cryptocurrency/blob/master/Cryptocurrency.png" width="100%"/>
 
+# 🚨 NOTE: Please note that the app is still in development 🚨
+
 # Cryptocurrency 💰
 A Simple Cryptocurrency app 📱 helps you to track live updates on each cryptocurrency
 
