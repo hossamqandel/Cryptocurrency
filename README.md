@@ -5,6 +5,12 @@
 # Cryptocurrency 💰
 A Simple Cryptocurrency app 📱 helps you to track live updates on each cryptocurrency
 
+Try latest Expenso app apk from below 👇
+
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.file.io/oxPQ/download/8nh3ht2gx8kR)
+
+
+
 ## Day Mode 🌞
 Cryptocurrencies | Cryptocurrency Details
 ------------- | -------------
