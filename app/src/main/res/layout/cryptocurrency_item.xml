@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="@dimen/_6sdp">
+    android:padding="@dimen/_14sdp">
 
 
     <TextView
@@ -23,11 +23,13 @@
         tools:text="Bitcoin" />
 
 
-    <Button
+    <TextView
         android:id="@+id/cryptocurrencyItem_BtnView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Active"
+        android:textColor="@color/button_color"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/roboto_bold"
         tools:text="Bitcoin" />
 
     <TextView
@@ -21,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="active"
+        android:fontFamily="@font/roboto_bold"
         android:textColor="@color/button_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_18sdp"
         android:text="@string/tags"
+        android:fontFamily="@font/roboto_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_CryptoDesc" />
 
@@ -60,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_18sdp"
         android:text="@string/team_members"
+        android:fontFamily="@font/roboto_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_CryptoTags" />
 
