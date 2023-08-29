@@ -3,6 +3,7 @@
 # Cryptocurrency 💰
 A Simple Cryptocurrency app 📱 helps you to track live updates on each cryptocurrency
 
+## Day Mode 🌞
 Cryptocurrencies | Cryptocurrency Details
 ------------- | -------------
 <img src="https://i.ibb.co/3BCQ4Js/crypto1-1.png"/>  | <img src="https://i.ibb.co/HF7JgmS/crypto2.png"/>
